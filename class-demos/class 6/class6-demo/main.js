@@ -26,6 +26,7 @@ window.onload = () => {
          //modify that ekement/content
     let newSpan = document.createElement('span');
     newSpan.textContent = 'new span';
+    newSpan.classList.add ('all-spans')
     let c = Math.floor(Math.random()* colors.length);
     newSpan.style.backgroundColor = colors[c];
     //add created element to the page
@@ -39,6 +40,16 @@ window.onload = () => {
  //2 amount of time in ms
  setInterval(()=>{
     console.log('two seconds have passed')
+    let allSpans = document.querySelectorAll('.all-spans')
+    console.log(allSpans)
+    //shorthand for (let s = 0; s<allSpans.length; s++)
+    for(let s in allSpans){
+        s.style.transform = `rotate(${rotation}deg)`
+        rotation++
+        console.log(s.style.transform)
+
+
+    }
  },2000);
     };
 
