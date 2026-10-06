@@ -16,5 +16,7 @@ window.addEventListener("load", ()=>{
         console.log('key pressed!')
         console.log(e.key)
         textDiv.textContent += e.key
+        if (e.key == ' '){
+            textDiv.textContent += 'L'
     })
 })
