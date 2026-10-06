@@ -1,0 +1,29 @@
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+    margin: 0;
+    box-sizing: border-box;
+
+    /* seperate selector w body */
+}
+body {
+border: 10px solid red;
+}
+
+.parent{
+    background-color: orange;
+    position: relative;
+    z-index: 1;
+
+}
+
+.child{
+    background-color: yellow;
+    position: absolute;
+    top: 0;
+    right: 33%;
+    z-index: -1;
+
+    /* overflow:hidden removes scroll use this for project */
