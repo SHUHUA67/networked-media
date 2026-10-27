@@ -21,4 +21,11 @@ nunjucks.configure("views", {
 app.set("view engine", "njk"); //
 
 //tells express using a templating tool both sides handshake 2 components talking tg
-app.get('/')
+app.get('/',(request,response)=>{
+  response.render('baselayout.njk', {serverData: 'this is my text from my server'})
+
+})
+app.listen(8080, ()=>{
+    //pwd > class 14 demo
+    console.log('http://localhost:8080')
+})

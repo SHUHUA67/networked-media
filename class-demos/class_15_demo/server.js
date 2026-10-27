@@ -34,8 +34,20 @@ app.get('/',(request,response)=>{
 //NEW app.get
 app.get('/form',(request, response)=>{
   response.render('form.njk)')
-}
+})
 
+app.get('view-all', (request, response)=>{
+  response.render('view-all.njk')
+})
+
+app.post('/send-message', (request,response)=>{
+  //this action will handle storing the data from the form on the server in the data array
+  //redirect to where we want the data to be displayed
+  console.log(request,body)
+  allData.push(request.body
+    response.redirect('/view-al.njkl'{messagesArrayFromServer: allData})
+  )
+})
 
 //starts the server to run, listen is listening for request, like ad event listener
 app.listen(8080, ()=>{

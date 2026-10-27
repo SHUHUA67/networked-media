@@ -1,0 +1,24 @@
+{
+  "name": "networked-media",
+  "version": "1.0.0",
+  "description": "my handbag app thing",
+  "homepage": "https://github.com/SHUHUA67/networked-media#readme",
+  "bugs": {
+    "url": "https://github.com/SHUHUA67/networked-media/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SHUHUA67/networked-media.git"
+  },
+  "license": "MIT",
+  "author": "Caitlyn Cui",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "nunjucks": "^3.2.4"
+  }
+}

@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  color: white;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    120deg,#100b18,#42153d,#741f35,#201032
+  );
+
+  background-size: 400% 400%;
+  animation: backgroundMove 15s ease infinite;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.blend {
+  max-width: 420px;
+  margin: auto;
+  padding: 0 15px 30px;
+}
+
+/* PLAYLIST TOP */
+
+.hero {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+}
+
+.purple {
+  right: 40px;
+  top: 50px;
+  background-color: #9b4de5;
+}
+
+.pink {
+  left: 40px;
+  top: 135px;
+  background-color: #e54d9b;
+  opacity: 0.8;
+}
+
+h1 {
+  position: absolute;
+  bottom: 20px;
+  margin: 0;
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+
+.description {
+  color: #b3a3bd;
+  font-size: 14px;
+  margin: 14px 0;
+}
+
+/* FORM place */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+input {
+  background-color: #2b2233;
+  border: 0;
+  border-radius: 4px;
+  color: white;
+  padding: 12px;
+  font-size: 15px;
+}
+
+input::placeholder {
+  color: #b3a3bd;
+}
+
+button {
+  background-color: #d77bff;
+  color: #1b1220;
+  border: 0;
+  border-radius: 30px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* LIST OF SONGS */
+
+.song {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.song-cover {
+  width: 52px;
+  height: 52px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #9b5de5, #ff5fb0);
+}
+
+.song-info {
+  flex: 1;
+}
+
+.song-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.song-artist {
+  margin: 3px 0 0;
+  font-size: 14px;
+  color: #b3a3bd;
+}
+
+.added-by {
+  color: #b3a3bd;
+  font-size: 12px;
+}

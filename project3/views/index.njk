@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Caitlyn's R&B Blend</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <main class="blend">
+            {# playlist top visuals #}
+            <div class="hero">
+                <div class="circle purple"></div>
+                <div class="circle pink"></div>
+                <h1>Caitlyn's<br> R&B Blend</h1>
+            </div>
+            <p class="description"> For people who love PND.
+                <br> {{ songs | length }} songs!
+            </p>
+            <form action="/add-song" method="post">
+                <input type="text" name="title" placeholder="Song Title" required>
+                <input type="text" name="artist" placeholder="Artist Name" required>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <button type="submit">Add to Blend</button>
+            </form>
+            {# displaying the songs here #}
+            {% for song in songs %}
+                <div class="song">
+                    <div class="song-cover"></div>
+                    <div class="song-info">
+                        <p class="song-title">{{ song.title }}</p>
+                        <p class="song-artist">{{ song.artist }}</p>
+                    </div>
+                    <div class="added-by">
+                        Added by {{ song.name }}
+                    </div>
+                </div>
+            {% else %}
+                <p class="description">
+                    No songs added yet.
+                </p>
+            {% endfor %}
+        </main>
+    </body>
+</html>

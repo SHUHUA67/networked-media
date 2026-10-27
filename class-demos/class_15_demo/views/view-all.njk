@@ -1,0 +1,21 @@
+{% include "partial-nav.njk" %}
+{# in order to access server data we need to use the variable passed in the server.ks for the render of view-all.njk #}
+{# messagesArrayFromServer #}
+{% for singleMEssage in messagesArrayFromServer %}
+<p>
+    <span>
+        user:
+    </span>
+    <span>
+        {{ singleMessage.user}}
+    </span>
+</p>
+<p>
+    <span>
+        user:
+    </span>
+    <span>
+        {{ singleMessage.message}}
+    </span>
+</p>
+{%endfor %}
