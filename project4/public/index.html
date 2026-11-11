@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Drinks</title>
+  </head>
+  <body>
+    <h1>Drinks</h1>
+
+    <form action="/add-drink" method="POST">
+      <label>Drink name</label>
+      <input
+        type="text"
+        name="drink"
+        placeholder="enter drink name"
+        maxlength="100"
+        required
+      />
+
+      <label>Emoji</label>
+      <input
+        type="text"
+        name="emoji"
+        placeholder="enter emoji"
+        maxlength="20"
+        required
+      />
+      <button type="submit">Add drink</button>
+    </form>
+    <p><a href="/api/drinks">See my drink API</a></p>
+  </body>
+</html>
