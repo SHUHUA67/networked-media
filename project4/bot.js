@@ -1,49 +1,57 @@
-require('dotenv').config();
-const m = require('masto');
-
-const masto = m.createRestAPIClient({
-    url: 'https://networked-media.itp.io/',
-    accessToken: process.env.TOKEN
+require('dotenv').config({
+    path: __dirname + '/.env',
+    override: true
 });
 
 async function postDinner() {
     try {
-        //jennifers data set
+        const m = await import('masto');
+
+        const masto = m.createRestAPIClient({
+            url: 'https://networked-media.itp.io/',
+            accessToken: process.env.TOKEN
+        });
+
+        //jennifers food part
         const response = await fetch(
             'http://68.183.19.37:6001/get-data'
         );
-
         if (!response.ok) {
             throw new Error('Could not load food API.');
         }
-
         const foods = await response.json();
 
-        if (foods.length === 0) {
+        if (!Array.isArray(foods) || foods.length === 0) {
             console.log('No foods available yet.');
             return;
         }
-
-        //pick a food
+        // random food part
         const random = Math.floor(Math.random() * foods.length);
         const food = foods[random].message;
 
-        //mastodon post
+        if (typeof food !== 'string' || !food.trim()) {
+            throw new Error('Selected entry has no food name.');
+        }
+
         const text =
-            'Yo guys I really want to have ' + food + ' for dinner 🍽️';
+            'Yo guys I really want to have ' +
+            food +
+            ' for dinner 🍽️';
 
         await masto.v1.statuses.create({
             status: text,
             visibility: 'private'
         });
 
-        console.log('Posted: ' + text);
+        console.log(new Date().toISOString(), 'Posted:', text);
     } catch (error) {
-        console.error('Bot error:', error.message);
+        console.error(new Date().toISOString(), 'Bot error:', error.message);
     }
 }
+//DINNER POST
+postDinner();
 
-//post per 6 hr
+//hiourly
 setInterval(() => {
     postDinner();
-}, 6 * 60 * 60 * 1000);
+}, 60 * 60 * 1000);
